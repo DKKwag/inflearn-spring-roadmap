@@ -44,4 +44,8 @@ public class SpringConfig {
 //        return new JdbcTemplateMemberRepository(dataSource);
         return new JpaMemberRepository(em);
     }*/
+    /*@Bean //Bean 등록 (Component Scan과 같은 Bean등록
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 }

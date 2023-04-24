@@ -8,16 +8,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService{
+    /*@Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }*/
 
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();   //DIP를 지키지않음 클라이언트에서 수정해줘야한다.
+    //    private final MemberRepository memberRepository = new MemoryMemberRepository();   //DIP를 지키지않음 클라이언트에서 수정해줘야한다.
 //    private final DiscountPolicy discountPolicy = new FixDisocuntPolicy();
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     //필드 주입 (잘 사용하지 않음)
 //    @Autowired private MemberRepository memberRepository;
-    private MemberRepository memberRepository;
+    //final = 초기값 혹은 생성자 아니면 값을 넣어 줄 수 없음.
+    private final MemberRepository memberRepository;
 //    @Autowired private DiscountPolicy discountPolicy;  //DIP를 지킴(인터페이스에만 의존)
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
     /*@Autowired
     //수정자 주입 선택,변경에 용이
     public void setMemberRepository(MemberRepository memberRepository) {
@@ -32,19 +41,19 @@ public class OrderServiceImpl implements OrderService{
     }*/
 
     //생성자가 하나일때는 Autowired를 생략해도 자동으로 주입해준다!! 참고!!
-    /*@Autowired
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    }*/
+    }
 
     //메서드 위에 Autowired ( 잘 사용하지 않음 )
-    @Autowired
+    /*@Autowired
     public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    }
+    }*/
 
 
 

@@ -16,8 +16,8 @@ import org.springframework.context.annotation.FilterType;
 //ComponentScan의 default : ComponentScan을 붙인 클래스가 해당되는 패키지부터 하위 패키지까지 다 조회
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository")
+    /*@Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
-    }
+    }*/
 }

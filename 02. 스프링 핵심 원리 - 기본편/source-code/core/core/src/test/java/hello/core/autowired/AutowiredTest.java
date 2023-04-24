@@ -9,7 +9,7 @@ import org.springframework.lang.Nullable;
 
 import java.util.Optional;
 
-public class AutowiredTest {
+class AutowiredTest {
 
     @Test
     void AutowiredOption() {

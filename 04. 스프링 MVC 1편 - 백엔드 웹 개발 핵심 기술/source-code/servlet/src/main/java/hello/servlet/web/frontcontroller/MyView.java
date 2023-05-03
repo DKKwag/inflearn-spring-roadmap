@@ -30,3 +30,4 @@ public class MyView {
         model.forEach((key, value) -> request.setAttribute(key, value));
     }
 }
+
